@@ -27,57 +27,9 @@
             </div>
         </div>
     </header>
-
-<div class="container2">
-<div class="container3 d-flex justify-content-center align-items-center min-vh-100"">
-    <div class="row">
-        <div class="col-md-6 calculator mx-auto">
-            <div class="container3 d-flex align-items-center justify-content-center min-vh-100">
-                <div class="card-body">
-                    <h4 class="card-title text-center mb-4">Developer Calculator</h4>
-
-                    <div class="text-center">
-                        <input type="text" id="calc-display" class="form-control mb-3" placeholder="0" disabled>
-                    
-                        <div class="d-flex justify-content-center mb-2">
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('1')">1</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('2')">2</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('3')">3</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('+')">+</button>
-                        </div>
-
-                        <div class="d-flex justify-content-center mb-2">
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('4')">4</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('5')">5</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('6')">6</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('-')">-</button>
-                        </div>
-                    
-                        <div class="d-flex justify-content-center mb-2">
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('7')">7</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('8')">8</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('9')">9</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('*')">*</button>
-                        </div>
-                    
-                        <div class="d-flex justify-content-center mb-2">
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('0')">0</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="clearDisplay()">C</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('.')">.</button>
-                            <button class="btn btn-outline-primary mx-1" onclick="appendToDisplay('/')">/</button>
-                        </div>
-                    
-                        <div class="d-flex justify-content-center mb-2">
-                            <button class="btn btn-outline-success mx-1" onclick="calculateResult()">=</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
+    <div id="calculator-container"></div>
+    <script type="module" src="../Scripts/main.js"></script>
+    
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" style="background: linear-gradient(45deg, #333333, #555555); color: rgba(255, 255, 255, 0.7);">
     <div class="col-md-4 d-flex align-items-center">
       <span class="mb-3 mb-md-0" style="color: white;">© 2025 Company, Inc</span>
@@ -110,25 +62,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    let display = document.getElementById('calc-display');
 
-    function appendToDisplay(value) {
-        display.value += value;
-    }
-
-    function clearDisplay() {
-        display.value = '';
-    }
-
-    function calculateResult() {
-        try {
-            display.value = eval(display.value);
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-</script>
 
 </body>
 </html>
