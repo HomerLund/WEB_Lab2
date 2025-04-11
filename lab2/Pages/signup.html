@@ -35,38 +35,41 @@
     </div>
   </header>
 
-  <form>
+  <form id="RegForm">
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
     <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+        <input id="username" type="text" class="form-control" placeholder="Input name">
+        <label for="username">Name</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+        <input id="useremail" type="email" class="form-control"  placeholder="Input email">
+        <label for="useremail">Email address</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm Password">
-      <label for="floatingConfirmPassword">Confirm Password</label>
+        <input id="password" type="password" class="form-control"  placeholder="Input password">
+        <label for="password">Password</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="date" class="form-control" id="floatingDOB" placeholder="Date of Birth">
-      <label for="floatingDOB">Date of Birth</label>
+        <input id="confirmpassword" type="password" class="form-control"  placeholder="Confirm Password">
+        <label for="confirmpassword">Confirm Password</label>
     </div>
 
-    <div class="form-check text-start my-3">
-      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Remember me
-      </label>
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="date" placeholder="Input date of birth">
+        <label for="date">Date of Birth</label>
     </div>
-
-    <button class="btn btn-primary w-100 py-2" type="button" type="submit" onclick="window.location.href='../Pages/profile.html';">Sign up</button>
+    <button id="RegButton" class="btn btn-primary w-100 py-2" type="button" type="submit">Sign up</button>
 </form>
+
+
+  
+  <script type="module" src="../Scripts/mainReg.js"></script>
+
+  
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top" style="background: linear-gradient(45deg, #333333, #555555); color: rgba(255, 255, 255, 0.7);">
       <div class="col-md-4 d-flex align-items-center">
