@@ -1,16 +1,13 @@
-export default class ViewReg {
+export default class ViewSignIn {
     getUser() {
         return {
-            name: document.getElementById("username").value,
             email: document.getElementById("useremail").value,
             password: document.getElementById("password").value,
-            confirmpassword: document.getElementById("confirmpassword").value,      
-            date: document.getElementById("date").value
         };
     }
     
     showSuccessMessage() {
-        alert("Data has been successfully saved!");
+        alert("Login successfully!");
     }
 
     showMessage(message, isError = false) {
@@ -20,6 +17,6 @@ export default class ViewReg {
     }
 
     resetForm() {
-        document.getElementById("RegForm").reset();
+        document.getElementById("loginForm").reset();
     }
   }

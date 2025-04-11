@@ -1,17 +1,17 @@
-export default class ControllerReg {
+export default class ControllerSignIn {
     constructor(model, view) {
         this.model = model;
         this.view = view;
     }
     
     initialize() {
-        const confirmButton = document.getElementById("RegButton");
-        const form = document.getElementById("RegForm");
+        const confirmButton = document.getElementById("loginButton");
+        const form = document.getElementById("loginForm");
         
         confirmButton.addEventListener("click", (event) => {
             event.preventDefault();
             const userData = this.view.getUser();
-            if (this.model.registerUser(userData)){
+            if (this.model.loginUser(userData)){
                 this.view.showSuccessMessage();
                 this.view.resetForm();
                 

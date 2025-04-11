@@ -22,9 +22,7 @@ export default class ModelReg {
         const { name, email } = userData;
         const accounts = JSON.parse(localStorage.getItem(this.usersKey)) || [];
         
-        return accounts.some(
-            (account) => account.email === email || account.name === name
-        );
+        return accounts.some((account) => account.email === email || account.name === name);
     }
   
     registerUser(userData) {
