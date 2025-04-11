@@ -1,7 +1,6 @@
 export default class ModelReg {
     constructor() {
         this.usersKey = 'user';
-        //this.users = [];
     }
   
     loadUsers() {
@@ -10,22 +9,27 @@ export default class ModelReg {
     }
   
     saveUsers(userData) {
-        localStorage.setItem(this.usersKey, JSON.stringify(userData));
+        const accounts = JSON.parse(localStorage.getItem(this.usersKey)) || [];
+        accounts.push(userData);
+        localStorage.setItem(this.usersKey, JSON.stringify(accounts));
+    }
+
+    CurrenUser(UserDate){
+        localStorage.setItem("CurrentUser", JSON.stringify(UserDate));
     }
 
     IsAccount(userData) {
         const { name, email } = userData;
-        let accounts = JSON.parse(localStorage.getItem(this.usersKey));
-    
-        if (accounts.name == name || accounts.email == email){
-            return false;
-        }
- 
-        return true;
+        const accounts = JSON.parse(localStorage.getItem(this.usersKey)) || [];
+        
+        return accounts.some(
+            (account) => account.email === email || account.name === name
+        );
     }
   
     registerUser(userData) {
         const { name, email,  password, confirmpassword, date } = userData;
+        
         if (name.length < 4) {
             alert("Login must contain at least 4 characters!");
             return false;
@@ -46,20 +50,19 @@ export default class ModelReg {
             alert("The password does not match the previous one");
             return false;
         }
-
-        
+   
         if (!date) {
             alert("Input date of birthday");
             return false;
         }
 
-        if (!this.IsAccount(userData)){
+        if (this.IsAccount(userData)){
             alert(  "An account with this email address or username already exists!");
             return false;
         }
 
-        //this.users.push(userData);
         this.saveUsers(userData);
+        this.CurrenUser(userData);
         return true;
     }
   }

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const account = localStorage.getItem("user");
+    const account = localStorage.getItem("CurrentUser");
 
     if (account) {
         const currentaccount = JSON.parse(account);

@@ -5,7 +5,7 @@ export default class RegistrationView {
             email: document.getElementById("useremail").value,
             password: document.getElementById("password").value,
             confirmpassword: document.getElementById("confirmpassword").value,      
-            date: document.getElementById("date").value,
+            date: document.getElementById("date").value
         };
     }
     
