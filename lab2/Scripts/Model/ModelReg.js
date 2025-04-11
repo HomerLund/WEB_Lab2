@@ -1,7 +1,7 @@
 export default class ModelReg {
     constructor() {
-        this.usersKey = 'registeredUsers';
-        this.users = this.loadUsers();
+        this.usersKey = 'user';
+        //this.users = [];
     }
   
     loadUsers() {
@@ -9,8 +9,19 @@ export default class ModelReg {
         return usersJSON ? JSON.parse(usersJSON) : [];
     }
   
-    saveUsers() {
-        localStorage.setItem(this.usersKey, JSON.stringify(this.users));
+    saveUsers(userData) {
+        localStorage.setItem(this.usersKey, JSON.stringify(userData));
+    }
+
+    IsAccount(userData) {
+        const { name, email } = userData;
+        let accounts = JSON.parse(localStorage.getItem(this.usersKey));
+    
+        if (accounts.name == name || accounts.email == email){
+            return false;
+        }
+ 
+        return true;
     }
   
     registerUser(userData) {
@@ -42,8 +53,14 @@ export default class ModelReg {
             return false;
         }
 
-        this.users.push(userData);
-        this.saveUsers();
+        if (!this.IsAccount(userData)){
+            alert(  "An account with this email address or username already exists!");
+            return false;
+        }
+
+        //this.users.push(userData);
+        this.saveUsers(userData);
         return true;
     }
   }
+
