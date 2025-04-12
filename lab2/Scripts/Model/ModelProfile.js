@@ -1,8 +1,5 @@
 export default class ModelProfile {
-    IsLoginIn() {
-        
-        
-
-        return true;
+    GetHistory() {
+        return JSON.parse(localStorage.getItem("calcHistory")) || [];
     }
 }

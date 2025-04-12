@@ -1,6 +1,6 @@
 // controller.js
 
-export default class Controller {
+export default class ControllerCalculator {
     constructor(model, view) {
         this.model = model;
         this.view = view;
@@ -19,6 +19,5 @@ export default class Controller {
         }
 
         this.view.updateDisplay(this.model.getDisplay());
-        this.view.render();
     }
 }

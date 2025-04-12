@@ -1,4 +1,4 @@
-export default class View {
+export default class ViewCalculator {
     constructor() {
         this.display = null;
         this.clearButton = null;
