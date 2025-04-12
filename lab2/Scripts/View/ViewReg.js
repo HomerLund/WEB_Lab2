@@ -13,12 +13,6 @@ export default class ViewReg {
         alert("Data has been successfully saved!");
     }
 
-    showMessage(message, isError = false) {
-        const msgDiv = this.form.querySelector('.message');
-        msgDiv.textContent = message;
-        msgDiv.style.color = isError ? 'red' : 'green';
-    }
-
     resetForm() {
         document.getElementById("RegForm").reset();
     }

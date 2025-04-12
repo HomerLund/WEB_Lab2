@@ -1,5 +1,5 @@
 .history-scrollbox {
-    max-height: 500px; /* або height: 300px; */
+    max-height: 500px;
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 10px;

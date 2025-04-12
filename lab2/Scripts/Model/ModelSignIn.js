@@ -3,7 +3,7 @@ export default class ModelSignIn{
         this.usersKey = 'user';
     }
 
-    CurrenUser(UserDate){
+    CurrentUser(UserDate){
         localStorage.setItem("CurrentUser", JSON.stringify(UserDate));
     }
 
@@ -29,7 +29,7 @@ export default class ModelSignIn{
             return false;
         }
 
-        this.CurrenUser(user);
+        this.CurrentUser(user);
         return true;
     }
   }

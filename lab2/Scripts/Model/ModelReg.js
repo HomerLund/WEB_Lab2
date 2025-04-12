@@ -3,18 +3,13 @@ export default class ModelReg {
         this.usersKey = 'user';
     }
   
-    loadUsers() {
-        const usersJSON = localStorage.getItem(this.usersKey);
-        return usersJSON ? JSON.parse(usersJSON) : [];
-    }
-  
     saveUsers(userData) {
         const accounts = JSON.parse(localStorage.getItem(this.usersKey)) || [];
         accounts.push(userData);
         localStorage.setItem(this.usersKey, JSON.stringify(accounts));
     }
 
-    CurrenUser(UserDate){
+    CurrentUser(UserDate){
         localStorage.setItem("CurrentUser", JSON.stringify(UserDate));
     }
 
@@ -60,7 +55,7 @@ export default class ModelReg {
         }
 
         this.saveUsers(userData);
-        this.CurrenUser(userData);
+        this.CurrentUser(userData);
         return true;
     }
   }

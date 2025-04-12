@@ -5,8 +5,8 @@ import ControllerCalculator from './Controller/ControllerCalculator.js';
 const model = new ModelCalculator();
 const view = new ViewCalculator();
 
- const calculatorContainer = document.getElementById('calculator-container');
+const calculatorContainer = document.getElementById('calculator-container');
 
- calculatorContainer.appendChild(view.toHtml());
+calculatorContainer.appendChild(view.toHtml());
 
- new ControllerCalculator(model, view);
+new ControllerCalculator(model, view);
