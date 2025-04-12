@@ -1,5 +1,3 @@
-// model.js
-
 export default class ModelCalculator {
     constructor() {
         this.expression = '';
@@ -17,10 +15,7 @@ export default class ModelCalculator {
         try {
             const expr_history = this.expression;
             this.expression = eval(this.expression).toString();
-            
             this.addToHistory(expr_history, this.expression);
-            
-            console.log(JSON.parse(localStorage.getItem("calcHistory")));
             
         } catch (e) {
             this.expression = 'Error';
@@ -33,8 +28,13 @@ export default class ModelCalculator {
 
     addToHistory(expression, result) {
         const historyItem = { expression, result };
-        const history = JSON.parse(localStorage.getItem("calcHistory")) || [];
-        history.push(historyItem);
-        localStorage.setItem("calcHistory", JSON.stringify(history));
+        const user = JSON.parse(localStorage.getItem("CurrentUser"));
+        
+        if (user){
+            const key = user.name + "calcHistory";
+            const history = JSON.parse(localStorage.getItem(key)) || [];  
+            history.push(historyItem);
+            localStorage.setItem(key, JSON.stringify(history));
+        }
     }
 }

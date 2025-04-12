@@ -14,7 +14,6 @@ export default class ControllerReg {
             if (this.model.registerUser(userData)){
                 this.view.showSuccessMessage();
                 this.view.resetForm();
-                
                 window.location.href = "../Pages/profile.html";
             }
         });

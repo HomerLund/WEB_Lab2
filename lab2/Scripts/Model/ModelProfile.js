@@ -1,5 +1,7 @@
 export default class ModelProfile {
     GetHistory() {
-        return JSON.parse(localStorage.getItem("calcHistory")) || [];
+        const user = JSON.parse(localStorage.getItem("CurrentUser"));
+        const key = user.name + "calcHistory";
+        return JSON.parse(localStorage.getItem(key)) || [];
     }
 }

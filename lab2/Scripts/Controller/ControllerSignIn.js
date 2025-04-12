@@ -14,7 +14,6 @@ export default class ControllerSignIn {
             if (this.model.loginUser(userData)){
                 this.view.showSuccessMessage();
                 this.view.resetForm();
-                
                 window.location.href = "../Pages/profile.html";
             }
         });

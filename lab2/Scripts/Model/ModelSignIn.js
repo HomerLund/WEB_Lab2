@@ -12,7 +12,7 @@ export default class ModelSignIn{
         const accounts = JSON.parse(localStorage.getItem(this.usersKey)) || [];
         
         const existingAccount = accounts.find(
-            (account) => account.email === email || account.name === name
+            (account) => account.email === email && account.password === password
         );
           
         if (existingAccount) {

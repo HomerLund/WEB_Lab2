@@ -61,7 +61,6 @@ export default class ViewCalculator {
         </div>
         `;
 
-        // Зберігаємо посилання на елементи
         const root = wrapper.firstElementChild;
         this.display = root.querySelector('#calc-display');
         this.clearButton = root.querySelector('#clear');

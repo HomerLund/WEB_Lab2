@@ -1,5 +1,3 @@
-// controller.js
-
 export default class ControllerCalculator {
     constructor(model, view) {
         this.model = model;

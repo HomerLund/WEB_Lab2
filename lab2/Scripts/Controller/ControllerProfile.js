@@ -15,9 +15,11 @@ export default class ControllerProfile {
         });   
         
         ClearHistoryButton.addEventListener("click", (event) => {
-            console.log(JSON.parse(localStorage.getItem("calcHistory")));
+            const user = JSON.parse(localStorage.getItem("CurrentUser"));
+            const key = user.name + "calcHistory";
+            console.log(key);
             event.preventDefault();
-            localStorage.removeItem("calcHistory");
+            localStorage.removeItem(key);
             window.location.href = "profile.html";
         });  
 
